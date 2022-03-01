@@ -11,7 +11,7 @@ public class BookManager {
         publisher2.setName("Lumen");
 
         Author author1 = new Author();
-        author1.setFirstName("Steven");
+        author1.setFirstName("Stephen");
         author1.setLastName("King");
 
         Author author2 = new Author();
