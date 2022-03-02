@@ -1,4 +1,5 @@
-Grad, temperatura(Celsius)
+Ime grada, temperatura (Celsius)
 Zagreb, 17.2
 Sisak, 19
-Velika Gorica, 25
+Velika Gorica, 24.2
+Dubrovnik, 32
