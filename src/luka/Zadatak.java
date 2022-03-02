@@ -16,8 +16,7 @@ public class Zadatak {
 
         for (int i = 0; i < polaznici.length; i++) {
             System.out.println("Unesite " + (i + 1) + ". polaznika");
-            String ime = scanner.next();
-            polaznici[i] = ime;
+            polaznici[i] = scanner.next();
 
         }
         for (String name:polaznici){
