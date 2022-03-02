@@ -3,13 +3,12 @@ package davor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.Scanner;
-import java.util.Arrays;
 
-public class TempReader {
+public class TempReaderWithArrays {
     public static void main(String[] args) throws FileNotFoundException {
 
+        // count number of cites
         int counter = 0;
 
         Scanner s = new Scanner(new File("doc/temp_croatia_2022-03-02.txt"));
@@ -25,6 +24,10 @@ public class TempReader {
         String [] gradovi  = new String[counter];
 
         s.close();
+
+
+        // transfer data from file to array
+
         s = new Scanner(new File("doc/temp_croatia_2022-03-02.txt"));
         s.useDelimiter(", |\n");
         s.nextLine();
@@ -41,9 +44,7 @@ public class TempReader {
             System.out.println("Ime grada: " + city + " temp " + temp);
         }
 
-        /*for (float f: temperature) {
-            System.out.println(f);
-        }*/
+        //  calculate max temperature
 
         float maxTemp = -20;
         String grad = "";
@@ -54,8 +55,8 @@ public class TempReader {
             }
         }
 
-        //Arrays.sort(temperature);
-        //System.out.println(temperature[temperature.length-1]);
+        // print
+
 
         System.out.println("Grad:" + grad + " MaxTemp:" + maxTemp);
     }
