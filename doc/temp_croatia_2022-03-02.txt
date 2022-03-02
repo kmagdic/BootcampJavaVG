@@ -1,0 +1,47 @@
+Postaja, Vjetar brzina (m/s)
+Zagreb-Maksimir, 1.0
+Zagreb-Grič, 2.8
+Puntijarka (Medvednica), 2.7
+Krapina, 1.2
+Varaždin, 0.9
+Križevci, 2.9
+Bilogora, 2.6
+Daruvar, 2.7
+Bjelovar, 1.8
+Sisak, 2.3
+Gorice (kod Nove Gradiške), 3.5
+Kutjevo, 4.5
+Slavonski Brod, 2.5
+Osijek-Čepin, 2.1
+Gradište, 3.2
+Karlovac, 1.0
+Ogulin, 1.6
+NP Plitvička jezera, 1.2
+Gospić, 3.9
+Parg-Čabar, 1.3
+Pazin, 3.7
+Pula-aerodrom, 7.0
+Porer, 7.2
+Monte Kope, 4.9
+Sv. Ivan na pučini, 4.3
+Opatija, 2.0
+Rijeka, 1.8
+Malinska, 1.8
+Crikvenica, 0.6
+Senj, 1.8
+Zavižan, 4.5
+Rab, 4.1
+Mali Lošinj, 3.0
+Zadar, 3.4
+Veli Rat, 5.6
+Knin, 4.6
+Šibenik, 4.3
+Split-Marjan, 4.7
+Makarska, 2.0
+Sv.Jure (Biokovo), 8.9
+Hvar, 4.4
+Ploče, 6.5
+Dubrovnik, 4.6
+Gruda, 2.6
+Prevlaka, 7.0
+Lastovo, 8.0
