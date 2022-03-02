@@ -1,4 +1,4 @@
-package Bicikleto;
+package bicikleto;
 
 public class Bicikl {
     private String model;
@@ -40,6 +40,7 @@ public class Bicikl {
 
     public Bicikl() {
     }
+
     public Bicikl(String model, int year) {
         this.model = model;
         this.year = year;

@@ -1,4 +1,4 @@
-package Bicikleto;
+package bicikleto;
 
 public class BicManager {
     public static void main(String[] args) {
@@ -17,8 +17,9 @@ public class BicManager {
         Bicikl bic5 = new Bicikl("Diamonback", 2005);
         bic5.setTerminal(velikaG);
 
+        // ispis
         System.out.println(bic3);
         System.out.println(bic5);
-
+        System.out.println(bic5.getTerminal().isOn());
     }
 }

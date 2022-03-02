@@ -1,6 +1,4 @@
-package Bicikleto;
-
-import java.util.Scanner;
+package bicikleto;
 
 public class Terminal {
     private String name;
