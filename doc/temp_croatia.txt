@@ -1,0 +1,4 @@
+Grad, temperatura(Celsius)
+Zagreb, 17.2
+Sisak, 19
+Velika Gorica, 25
