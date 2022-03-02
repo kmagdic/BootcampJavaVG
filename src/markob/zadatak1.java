@@ -18,6 +18,7 @@ public class zadatak1 {
         for (int i = 0; i < polaznici.length; i++) {
             String ime = scanner.next();
             polaznici[i] = ime;
+            // polaznici[i] = scanner.next(); ---- može i tako
         }
         // ispis
         for (String name: polaznici) {
