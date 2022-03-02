@@ -28,6 +28,7 @@ public class zadatak1 {
                     String ime = scanner.next();
                     polaznici[i] = ime;
 
+
                 }
                 for (int i = 0; i < polaznici.length; i++) {
                     System.out.println(polaznici[i]);
