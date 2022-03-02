@@ -1,4 +1,4 @@
-package Bicikleto;
+package bicikleto;
 
 public class BicManager {
     public static void main(String[] args) {

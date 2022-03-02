@@ -1,4 +1,4 @@
-package Bicikleto;
+package bicikleto;
 
 public class Bicikl {
     private String model;
