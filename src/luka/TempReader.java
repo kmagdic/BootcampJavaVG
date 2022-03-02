@@ -1,22 +1,27 @@
 package luka;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.FileReader;;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class TempReader {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new FileReader("doc/temp_croatia.txt"));
+        Scanner scanner = new Scanner(new FileReader("doc/temp_croatia_2022-03-02.txt"));
         scanner.nextLine();
         scanner.useDelimiter(", |\n");
-        while(scanner.hasNext()) {
+
+        float zbroj = 0;
+        float count = 0;
+        while (scanner.hasNext()) {
             String city = scanner.next();
             String temp = scanner.next();
-            System.out.println("Grad: "+ city+ " ima temperaturu "+ temp);
+            float temperatua = Float.parseFloat(temp);
+            zbroj += temperatua;
+            count++;
+
 
         }
-
+        float prosjek = zbroj / count;
+        System.out.println("Prosječna temperatura iznosi : "+ prosjek +" stupnjeva celzijevih.");
     }
 }
