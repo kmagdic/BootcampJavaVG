@@ -40,6 +40,7 @@ public class Bicikl {
 
     public Bicikl() {
     }
+
     public Bicikl(String model, int year) {
         this.model = model;
         this.year = year;

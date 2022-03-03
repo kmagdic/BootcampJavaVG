@@ -1,0 +1,6 @@
+Ime grada, temperatura
+Zagreb, 6
+Velika gorica, 4
+Rijeka, 14
+Dubrovnik, 18
+Split, 16
