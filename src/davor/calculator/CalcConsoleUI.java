@@ -1,21 +1,10 @@
-package luka.Calculator;
+package davor.calculator;
 
 import java.util.Scanner;
 
 public class CalcConsoleUI {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
-        CalculatorLogic calc = null;
-
-        System.out.println("Odaberite kalkulator : 1 obicni , 2 : napredni .");
-        int type = scanner.nextInt();
-        if (type == 1) {
-            calc = new CalculatorLogic();
-        } else {
-            calc = new CalculatorAdvanced();
-        }
-
 
         System.out.println("Unesite a : ");
         double a = scanner.nextDouble();
@@ -24,13 +13,15 @@ public class CalcConsoleUI {
         double b = scanner.nextDouble();
 
         System.out.println("Unesite operaciju : ");
-        String oper = scanner.next();
+        String operator = scanner.next();
 
+        Calculator calc = new Calculator();
         calc.setA(a);
         calc.setB(b);
-        calc.setOper(oper);
+        calc.setOperator(operator);
 
         System.out.println("Rezultat je : " + calc.calculate());
 
     }
+
 }
