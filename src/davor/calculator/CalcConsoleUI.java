@@ -6,6 +6,15 @@ public class CalcConsoleUI {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Odaberite kalkulator: 1 Basic, 2 Advanced");
+        int type = scanner.nextInt();
+        Calculator calc;
+        if (type == 1) {
+            calc = new Calculator();
+        } else {
+            calc = new AdvancedCalculator();
+        }
+
         System.out.println("Unesite a : ");
         double a = scanner.nextDouble();
 
@@ -15,10 +24,11 @@ public class CalcConsoleUI {
         System.out.println("Unesite operaciju : ");
         String operator = scanner.next();
 
-        Calculator calc = new Calculator();
+
         calc.setA(a);
         calc.setB(b);
         calc.setOperator(operator);
+
 
         System.out.println("Rezultat je : " + calc.calculate());
 
