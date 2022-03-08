@@ -18,12 +18,13 @@ public class CalculatorLogic {
     }
 
     public double calculate() {
-        return switch (operatus) {
+        return 0;
+      /*  return switch (operatus) {
             case "+" -> a + b;
             case "-" -> a - b;
             case "*" -> a * b;
             case "/" -> a / b;
             default -> 0;
-        };
+        };*/
     }
 }
