@@ -6,6 +6,16 @@ public class CalcConsoleUI {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        CalculatorLogic calc = null;
+
+        System.out.println("Odaberite kalkulator : 1 obicni , 2 : napredni .");
+        int type = scanner.nextInt();
+        if (type == 1) {
+            calc = new CalculatorLogic();
+        } else {
+            calc = new CalculatorAdvanced();
+        }
+
 
         System.out.println("Unesite a : ");
         double a = scanner.nextDouble();
@@ -13,29 +23,14 @@ public class CalcConsoleUI {
         System.out.println("Unesite b : ");
         double b = scanner.nextDouble();
 
-        System.out.println("Unesite c : ");
-        double c = scanner.nextDouble();
-
-        System.out.println("Unesite d : ");
-        double d = scanner.nextDouble();
-
         System.out.println("Unesite operaciju : ");
         String oper = scanner.next();
 
-        CalculatorLogic calc = new CalculatorLogic();
         calc.setA(a);
         calc.setB(b);
         calc.setOper(oper);
 
         System.out.println("Rezultat je : " + calc.calculate());
 
-        CalculatorLogic calc4 = new CalculatorLogic();
-        calc4.setA(a);
-        calc4.setB(b);
-        calc4.setC(c);
-        calc4.setD(d);
-        calc4.setOper(oper);
-
-        System.out.println("Rezultat je : " + calc4.calculatefour());
     }
 }
