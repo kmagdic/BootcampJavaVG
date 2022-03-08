@@ -1,7 +1,7 @@
 package dario;
 import java.util.Scanner;
 
-public class zad1 {
+public class Zad1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n;

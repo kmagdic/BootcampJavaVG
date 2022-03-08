@@ -4,6 +4,8 @@ public class Ticket {
     private String ticketType;
     private String timeOfPrinting;
     private ParkingMachine parkingMachine;
+    private int price;
+
 
     Ticket() {
     }
@@ -18,6 +20,7 @@ public class Ticket {
                 "ticketType='" + ticketType + '\'' +
                 ", timeOfPrinting='" + timeOfPrinting + '\'' +
                 ", parkingMachine=" + parkingMachine +
+                ", price=" + price +
                 '}';
     }
 
@@ -43,5 +46,13 @@ public class Ticket {
 
     public void setParkingMachine(ParkingMachine parkingMachine) {
         this.parkingMachine = parkingMachine;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
     }
 }

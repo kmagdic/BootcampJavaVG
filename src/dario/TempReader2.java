@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class tempReader2 {
+public class TempReader2 {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = new Scanner(new FileReader("doc/temp_croatia_2022-03-02.txt"));
         scanner.nextLine();

@@ -3,7 +3,7 @@ package dario;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class tempWriter {
+public class TempWriter {
     public static void main(String[] args) throws IOException {
 
         FileWriter write = new FileWriter("doc/dario_temp.txt");
