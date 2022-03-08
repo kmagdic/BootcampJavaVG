@@ -2,13 +2,23 @@ package parkingmanager;
 
 public class ParkingManager {
     public static void main(String[] args) {
-        ParkingMachine pkm1 = new ParkingMachine();
-        pkm1.setLocation("Vukovarska 42");
-        pkm1.setPrice(100);
+        ParkingMachine pkm1 = new ParkingMachine("Vukovarska 123", 10, 200);
+
+        Ticket t1 = pkm1.createTicket();
+        Ticket t2 = pkm1.createTicket();
+
+        System.out.println(t1);
+        System.out.println(t2);
+
+
+        System.out.println(pkm1);
+
+
+        System.out.println(" --- ");
 
         ParkingMachine pkm2 = new ParkingMachine();
         pkm2.setLocation("Maksimirska 141");
-        pkm2.setPrice(200);
+        pkm2.setTicketPrice(200);
 
         Ticket ticket1 = new Ticket();
         ticket1.setTicketType("daily");
