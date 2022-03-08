@@ -5,6 +5,15 @@ import java.util.Scanner;
 public class MainCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        CalculatorLogic calculator = null;
+
+        System.out.println("CHOOSE CALCULATOR: 1. BASIC, 2. ADVANCED");
+        int type = scanner.nextInt();
+        if (type == 1) {
+            calculator = new CalculatorLogic();
+        } else if (type == 2) {
+            calculator = new AdvancedCalculator();
+        }
 
         System.out.println("ENTER NUMBER A : ");
         double a = scanner.nextDouble();
@@ -14,8 +23,6 @@ public class MainCalculator {
 
         System.out.println("OPERATION : ");
         String operation = scanner.next();
-
-        CalculatorLogic calculator = new CalculatorLogic();
 
         calculator.setA(a);
         calculator.setB(b);

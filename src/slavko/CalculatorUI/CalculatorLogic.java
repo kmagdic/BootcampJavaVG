@@ -2,8 +2,8 @@ package slavko.CalculatorUI;
 
 public class CalculatorLogic {
 
-    private double a;
-    private double b;
+    double a;
+    double b;
     String operation;
 
     public void setA(double a) {
@@ -33,5 +33,4 @@ public class CalculatorLogic {
                 return 0;
         }
     }
-
 }
