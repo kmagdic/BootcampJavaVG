@@ -2,8 +2,8 @@ package davor.calculator;
 
 public class Calculator {
 
-    private double a;
-    private double b;
+    double a;
+    double b;
     String operator;
 
     public double getA() {
