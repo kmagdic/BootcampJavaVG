@@ -18,6 +18,9 @@ public class Calculator {
         this.b = b;
     }
 
+    public String operationType() {
+        return "+, -, /, *";
+    }
 
     public double calculate() {
 
@@ -36,5 +39,4 @@ public class Calculator {
         }
         return result;
     }
-
 }
