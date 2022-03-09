@@ -1,4 +1,4 @@
-package dario;
+package dario.randomZadaci;
 import java.util.Scanner;
 
 public class Zad1 {

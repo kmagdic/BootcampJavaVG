@@ -1,4 +1,4 @@
-package dario;
+package dario.temperature;
 
 import java.io.FileWriter;
 import java.io.IOException;
