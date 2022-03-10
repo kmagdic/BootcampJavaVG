@@ -22,7 +22,7 @@ public class Calculator {
         return this.opSup;
     }
 
-    public double calculate() {
+    public double calculate() throws Exception {
         switch(oper) {
             case "+":
                 return a + b;
@@ -31,11 +31,16 @@ public class Calculator {
             case "*":
                 return a * b;
             case "/":
-                return a / b;
+                if (b == 0) {
+                    throw new Exception("Division by zero not possible");
+                } else {
+                    return a / b;
+                }
+
             case "%":
                 return a % b;
             default:
-                return 0;
+                throw new Exception("Operation is not supported");
         }
 
     }
