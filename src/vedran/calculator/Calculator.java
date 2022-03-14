@@ -1,47 +1,51 @@
-package dario.calculator;
+package vedran.calculator;
 
 public class Calculator {
+
     double a;
     double b;
-    String oper;
-    String opSup = "+, -, *, /, %";
+    String operator;
+
+    public double getA() {
+        return a;
+    }
 
     public void setA(double a) {
         this.a = a;
+    }
+
+    public double getB() {
+        return b;
     }
 
     public void setB(double b) {
         this.b = b;
     }
 
-    public void setOper(String oper) {
-        this.oper = oper;
+    public String getOperator() {
+        return operator;
     }
 
-    public String supportedOps() {
-        return this.opSup;
+    public void setOperator(String operator) {
+        this.operator = operator;
     }
 
     public double calculate() throws Exception {
-        switch(oper) {
+        switch (operator) {
             case "+":
                 return a + b;
             case "-":
                 return a - b;
-            case "*":
-                return a * b;
             case "/":
                 if (b == 0) {
-                    throw new Exception("Division by zero not possible");
+                    throw new Exception("Division by zero");
                 } else {
                     return a / b;
                 }
-
-            case "%":
-                return a % b;
+            case "*":
+                return a * b;
             default:
-                throw new Exception("Operation is not supported");
+                throw new Exception("Unknown operation");
         }
-
     }
 }
