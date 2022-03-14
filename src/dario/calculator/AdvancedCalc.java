@@ -7,7 +7,7 @@ public class AdvancedCalc extends Calculator {
     }
 
     @Override
-    public double calculate() {
+    public double calculate() throws Exception {
         if (oper.equals("**")) {
             return Math.pow(a, b);
         } else if (oper.equals("min")) {
