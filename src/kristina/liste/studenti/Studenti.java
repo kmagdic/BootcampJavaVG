@@ -1,4 +1,4 @@
-package liste.studenti;
+package kristina.liste.studenti;
 
 public class Studenti {
 

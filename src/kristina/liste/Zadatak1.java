@@ -1,4 +1,4 @@
-package liste;
+package kristina.liste;
 
 import java.util.*;
 

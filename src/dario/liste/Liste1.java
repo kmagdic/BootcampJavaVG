@@ -13,10 +13,10 @@ public class Liste1 {
         }
 
         System.out.println("Veličina: " + brojevi.size());
-        System.out.println("Treći element liste: " + brojevi.get(2));
+        System.out.println("Treći element kristina.liste: " + brojevi.get(2));
 
         brojevi.add(2, 30);
-        System.out.println("Treći element liste: " + brojevi.get(2));
+        System.out.println("Treći element kristina.liste: " + brojevi.get(2));
 
         System.out.println(brojevi);
 

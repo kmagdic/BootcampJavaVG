@@ -1,4 +1,4 @@
-package liste;
+package kristina.liste;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +25,8 @@ public class Liste {
 
         System.out.println("Moji brojevi su: " + brojevi);
 
-        System.out.println("Veličina liste brojevi: " + brojevi.size());
-        System.out.println("Treći element liste: " + brojevi.get(2));
+        System.out.println("Veličina kristina.liste brojevi: " + brojevi.size());
+        System.out.println("Treći element kristina.liste: " + brojevi.get(2));
 
         brojevi.add(1, 30);
         System.out.println(brojevi);

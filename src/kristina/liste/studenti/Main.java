@@ -1,6 +1,4 @@
-package liste.studenti;
-
-import studentmanager.Student;
+package kristina.liste.studenti;
 
 import java.util.ArrayList;
 import java.util.List;

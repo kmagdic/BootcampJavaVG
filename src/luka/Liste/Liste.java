@@ -20,8 +20,8 @@ public class Liste {
         brojevi.add(10);
         brojevi.add(20);
         brojevi.add(30);
-        System.out.println("Veličina liste brojevi : "+ brojevi.size());
-        System.out.println("Trreći element liste " + brojevi.get(2));
+        System.out.println("Veličina kristina.liste brojevi : "+ brojevi.size());
+        System.out.println("Trreći element kristina.liste " + brojevi.get(2));
         brojevi.add(1,15);
         System.out.println(brojevi);
 
