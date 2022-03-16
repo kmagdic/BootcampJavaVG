@@ -30,7 +30,6 @@ public class CalculatorMain {
         System.out.println("Result: " + calculator.calculate());
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        };
-
+        }
     }
 }
