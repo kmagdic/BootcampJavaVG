@@ -65,9 +65,9 @@ public class Zad2 {
         String choice = "";
         int unosID;
 
-        while (!choice.equals("f")){
-            System.out.println("a) upis studenta, b) ispis studenta, c) brisanje studenta, \n" +
-                    "d) promjena godine studije, e) ispis svih studenata, f) izlaz");
+        while (!choice.equals("f")) {
+            System.out.println("a) upis studenta, b) ispis studenta, c) brisanje studenta, ");
+            System.out.println("d) promjena godine studije, e) ispis svih studenata, f) izlaz");
             choice = scanner.nextLine();
             switch (choice) {
                 case "a":
@@ -110,6 +110,7 @@ public class Zad2 {
                     System.out.println("exiting...");
                     break;
             }
+            System.out.println("");
         }
 
     }
