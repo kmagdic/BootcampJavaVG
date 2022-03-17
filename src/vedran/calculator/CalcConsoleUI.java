@@ -1,4 +1,4 @@
-package davor.calculator;
+package vedran.calculator;
 
 import java.util.Scanner;
 
@@ -29,9 +29,11 @@ public class CalcConsoleUI {
         calc.setB(b);
         calc.setOperator(operator);
 
-
-        System.out.println("Rezultat je : " + calc.calculate());
-
+        try {
+            System.out.println("Rezultat je : " + calc.calculate());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

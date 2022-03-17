@@ -25,10 +25,11 @@ public class CalculatorMain {
         calculator.setB(scanner.nextDouble());
 
         System.out.println("Operation");
+        try {
         calculator.setOper(scanner.next());
-
-
         System.out.println("Result: " + calculator.calculate());
-
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

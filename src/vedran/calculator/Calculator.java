@@ -1,4 +1,4 @@
-package davor.calculator;
+package vedran.calculator;
 
 public class Calculator {
 
@@ -30,18 +30,22 @@ public class Calculator {
         this.operator = operator;
     }
 
-    public double calculate() {
+    public double calculate() throws Exception {
         switch (operator) {
             case "+":
                 return a + b;
             case "-":
                 return a - b;
             case "/":
-                return a / b;
+                if (b == 0) {
+                    throw new Exception("Division by zero");
+                } else {
+                    return a / b;
+                }
             case "*":
                 return a * b;
             default:
-                return 0;
+                throw new Exception("Unknown operation");
         }
     }
 }
