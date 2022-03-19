@@ -1,16 +1,15 @@
 package karlo.kristina;
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class Account {
 
-    Scanner scanner = new Scanner(System.in);
-    Random random = new Random();
+    static Scanner scanner = new Scanner(System.in);
+    static Random random = new Random();
 
     private String cardNumber;
     private String pin;
-    private List<String> cardList = new ArrayList<String>();
+    private static List<String> cardList = new ArrayList<String>();
 
     public String getNewCardNumber() {
         return cardNumber;
@@ -20,7 +19,7 @@ public class Account {
         return pin;
     }
 
-    public String newCardNumber(String cardNumber) {
+    public static String createNewCardNumber() {
         String bin = "400000";
         int lowerAccNr = 100000000;
         int upperAccNr = 999999999;
@@ -38,46 +37,39 @@ public class Account {
         }
         int lastDigit = (sum * 9) % 10;
 
-        cardNumber = digits + String.valueOf(lastDigit);
+        String cardNumber = digits + String.valueOf(lastDigit);
 
         return cardNumber;
     }
 
-    public String newPin(String pin) {
+    public static String createNewPin() {
         int lower = 1000;
         int upper = 9999;
-        pin = String.valueOf(random.nextInt(upper - lower + 1) + lower);
+        String pin = String.valueOf(random.nextInt(upper - lower + 1) + lower);
 
         return pin;
     }
 
-    public void cardList(String cardNumber, String pin){
+    public static void addCardToList(String cardNumber, String pin){
         cardList.add(cardNumber);
         cardList.add(pin);
     }
 
-    public void pinCheck() {
-
-        System.out.println("Enter your card number:");
-        String cardNumberCheck = scanner.next();
-        System.out.println("Enter your PIN:");
-        String pinNumberCheck = scanner.next();
-
-        for (String number : cardList) {
+    public static boolean checkPin(String cardNumberCheck, String pinNumberCheck) {
+       for (String number : cardList) {
             if (number.equals(cardNumberCheck) && cardList.get(cardList.indexOf(number)+1).equals(pinNumberCheck)) {
-                System.out.println("You have successfully logged in!");
-                accountMenu();
-                break;
+                return true;
             }
-            System.out.println("Wrong card number or PIN!");
         }
+
+        return false;
     }
 
-    public void accountMenu() {
+    public static void accountMenu() {
 
         String accountMenuSelect = "";
 
-        while(!accountMenuSelect.equals("0")) {
+        while(!accountMenuSelect.equals("0") && !accountMenuSelect.equals("2")) {
 
             System.out.println("1. Balance \n" +
                     "2. Log out \n" +
@@ -93,7 +85,6 @@ public class Account {
 
                 case "2":
                     System.out.println("You have successfully logged out!");
-                    mainMenu();
                     break;
 
                 case "0":
@@ -103,7 +94,7 @@ public class Account {
         }
     }
 
-    public void mainMenu() {
+    public static void main(String[] args) {
 
         String mainMenuSelect = " ";
 
@@ -118,16 +109,27 @@ public class Account {
             if (mainMenuSelect.equals("1")) {
 
                 System.out.println("Your card has been created");
-                cardNumber = newCardNumber(cardNumber);
+                String newCardNumber = createNewCardNumber();
                 System.out.println("Your card number:");
-                System.out.println(getNewCardNumber());
-                pin = newPin(pin);
+                System.out.println(newCardNumber);
+                String newPin = createNewPin();
                 System.out.println("Your card PIN:");
-                cardList(cardNumber, pin);
-                System.out.println(getNewPin());
+                addCardToList(newCardNumber, newPin);
+                System.out.println(newPin);
 
             } else if (mainMenuSelect.equals("2")) {
-                pinCheck();
+
+                System.out.println("Enter your card number:");
+                String cardNumberCheck = scanner.next();
+                System.out.println("Enter your PIN:");
+                String pinNumberCheck = scanner.next();
+
+                if(checkPin(cardNumberCheck, pinNumberCheck)) {
+                    System.out.println("You have successfully logged in!");
+                    accountMenu();
+                } else {
+                    System.out.println("Wrong card number or PIN!");
+                }
             }
         }
     }
