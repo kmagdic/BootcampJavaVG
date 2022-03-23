@@ -65,7 +65,7 @@ public class StudentiMain {
 
     }
 
-    static dario.mape.studenti.Student addNewStudent() {
+    public static dario.mape.studenti.Student addNewStudent() {
         dario.mape.studenti.Student student1 = new dario.mape.studenti.Student();
         System.out.println("Unesite ime studenta: ");
         student1.setFirstName(scanner.nextLine());
