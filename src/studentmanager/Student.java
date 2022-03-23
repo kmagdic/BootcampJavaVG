@@ -33,7 +33,7 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", year=" + year +
                 ", id=" + id +
-                ", course=" + curse +
+                ", course=" + course +
                 '}';
     }
 
