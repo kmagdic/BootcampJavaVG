@@ -27,6 +27,7 @@ public class StudentDaoSqlite {
             s.setString(3, String.valueOf(s1.getYear()));
 
             s.execute();
+            s1.setId(s.getGeneratedKeys().getInt(1));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -45,6 +46,7 @@ public class StudentDaoSqlite {
 
             while (result.next()) {
                 Student s = new Student();
+                s.setId(result.getInt(1));
                 s.setFirstName(result.getString("first_name"));
                 s.setLastName(result.getString("last_name"));
                 s.setYear(result.getInt("year"));

@@ -7,6 +7,15 @@ public class Student {
     private String lastName;
     private int year;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
 
 
     Student() {
@@ -25,6 +34,7 @@ public class Student {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", year=" + year +
+                ", ID=" + id +
                 '}';
     }
 
