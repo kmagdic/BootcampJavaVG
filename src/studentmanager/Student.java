@@ -1,4 +1,4 @@
-package dario.studentdb;
+package studentmanager;
 
 
 
@@ -6,21 +6,19 @@ public class Student {
     private String firstName;
     private String lastName;
     private int year;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     private int id;
+    private Course course;
+
 
 
     Student() {
     }
 
+
+    Student(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
     Student(String firstName, String lastName, int year) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -34,7 +32,8 @@ public class Student {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", year=" + year +
-                ", ID=" + id +
+                ", id=" + id +
+                ", course=" + course +
                 '}';
     }
 
@@ -62,5 +61,19 @@ public class Student {
         this.year = year;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
 }

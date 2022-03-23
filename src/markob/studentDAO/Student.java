@@ -1,21 +1,12 @@
-package dario.studentdb;
-
-
+package markob.studentDAO;
 
 public class Student {
+
     private String firstName;
     private String lastName;
     private int year;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     private int id;
+
 
 
     Student() {
@@ -27,14 +18,13 @@ public class Student {
         this.year = year;
     }
 
-
     @Override
     public String toString() {
         return "Student{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", year=" + year +
-                ", ID=" + id +
+                ", id=" + id +
                 '}';
     }
 
@@ -62,5 +52,7 @@ public class Student {
         this.year = year;
     }
 
+    public int getId() { return id; }
 
+    public void setId(int id) { this.id = id; }
 }
