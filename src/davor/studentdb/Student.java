@@ -6,16 +6,18 @@ public class Student {
     private String firstName;
     private String lastName;
     private int year;
+    private int id;
 
 
 
     Student() {
     }
 
-    Student(String firstName, String lastName, int year) {
+    Student(String firstName, String lastName, int year, int id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.year = year;
+        this.id = id;
     }
 
 
@@ -25,6 +27,7 @@ public class Student {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", year=" + year +
+                ", id=" + id +
                 '}';
     }
 
@@ -52,5 +55,11 @@ public class Student {
         this.year = year;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }

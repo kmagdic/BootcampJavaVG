@@ -18,15 +18,17 @@ public class StudentDaoSqlite {
     }
 
     public void saveStudent(Student s1) {
-        String sql = "INSERT INTO student (first_name, last_name, year) VALUES(?, ?, ?)";
+        String sql = "INSERT INTO student (first_name, last_name, year, id) VALUES(?, ?, ?, ?)";
 
         try  {
             PreparedStatement s = conn.prepareStatement(sql);
             s.setString(1, s1.getFirstName());
             s.setString(2, s1.getLastName());
             s.setInt(3, s1.getYear());
+            s.setInt(4, s1.getId());
 
             s.execute();
+            s1.setId(s.getGeneratedKeys().getInt(1));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -36,9 +38,7 @@ public class StudentDaoSqlite {
         String sgl = "DELETE FROM student WHERE first_name = ? AND last_name = ?";
         try  {
             PreparedStatement s = conn.prepareStatement(sgl);
-            s.setString(1, s1.getFirstName());
-            s.setString(2, s1.getLastName());
-            //s.setInt(3, s1.getYear());
+            s.setInt(1, s1.getId());
 
             s.execute();
         } catch (SQLException e) {
@@ -61,6 +61,7 @@ public class StudentDaoSqlite {
                 s.setFirstName(result.getString("first_name"));
                 s.setLastName(result.getString("last_name"));
                 s.setYear(result.getInt("year"));
+
                 students.add(s);
             }
         } catch (SQLException e) {
