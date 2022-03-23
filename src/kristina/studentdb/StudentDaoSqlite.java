@@ -64,6 +64,7 @@ public class StudentDaoSqlite {
                 s.setFirstName(result.getString("first_name"));
                 s.setLastName(result.getString("last_name"));
                 s.setYear(result.getInt("year"));
+                s.setId(result.getInt("id"));
                 students.add(s);
             }
         } catch (SQLException e) {
