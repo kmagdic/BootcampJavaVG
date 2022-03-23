@@ -1,4 +1,4 @@
-package dario.studentdb;
+package kristina.studentdb;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,27 +17,42 @@ public class StudentDaoSqlite {
 
     }
 
-    public void saveStudent(Student s1) {
-        String sql = "INSERT INTO students (first_name, last_name, year) VALUES(?, ?, ?)";
+    public void saveStudent(Student student) {
+        String sql = "INSERT INTO student (first_name, last_name, year) VALUES(?, ?, ?)";
 
         try  {
-            PreparedStatement s = conn.prepareStatement(sql);
-            s.setString(1, s1.getFirstName());
-            s.setString(2, s1.getLastName());
-            s.setString(3, String.valueOf(s1.getYear()));
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, student.getFirstName());
+            statement.setString(2, student.getLastName());
+            statement.setInt(3, student.getYear());
 
-            s.execute();
-            s1.setId(s.getGeneratedKeys().getInt(1));
+            statement.execute();
+
+            student.setId(statement.getGeneratedKeys().getInt(1));
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
 
+    public void delete(int id) {
+        String sql = "DELETE FROM student WHERE id = ?";
+
+        try {
+            PreparedStatement s = conn.prepareStatement(sql);
+            s.setInt(1, id);
+
+            s.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public List<Student> listAll() {
         List<Student> students = new ArrayList<>();
-        String sql = "SELECT * FROM students";
+        String sql = "SELECT * FROM student";
 
         try {
             Statement statement = conn.createStatement();
@@ -46,10 +61,10 @@ public class StudentDaoSqlite {
 
             while (result.next()) {
                 Student s = new Student();
-                s.setId(result.getInt(1));
                 s.setFirstName(result.getString("first_name"));
                 s.setLastName(result.getString("last_name"));
                 s.setYear(result.getInt("year"));
+                s.setId(result.getInt("id"));
                 students.add(s);
             }
         } catch (SQLException e) {
@@ -58,17 +73,5 @@ public class StudentDaoSqlite {
 
         return students;
 
-    }
-
-    public void deleteStudent(int id) {
-        String sql = "DELETE FROM students WHERE ID = " + id;
-
-        try  {
-            PreparedStatement s = conn.prepareStatement(sql);
-
-            s.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }

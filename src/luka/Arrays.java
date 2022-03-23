@@ -1,6 +1,5 @@
 package luka;
 
-import studentmanager.Student;
 
 import java.util.Scanner;
 

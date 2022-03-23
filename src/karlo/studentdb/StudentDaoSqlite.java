@@ -57,7 +57,7 @@ public class StudentDaoSqlite {
             s.setString(1, student.getFirstName());
             s.setString(2, student.getLastName());
             s.setInt(3, student.getYear());
-            s.setInt(3, student.getId());
+            s.setInt(4, student.getId());
 
             s.execute();
             student.setId(s.getGeneratedKeys().getInt(1));
