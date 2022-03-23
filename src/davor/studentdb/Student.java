@@ -1,18 +1,21 @@
-package studentmanager;
+package davor.studentdb;
+
+
 
 public class Student {
     private String firstName;
     private String lastName;
     private int year;
-    private Course course;
+
 
 
     Student() {
     }
 
-    Student(String firstName, String lastName) {
+    Student(String firstName, String lastName, int year) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.year = year;
     }
 
 
@@ -22,7 +25,6 @@ public class Student {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", year=" + year +
-                ", course=" + course +
                 '}';
     }
 
@@ -50,11 +52,5 @@ public class Student {
         this.year = year;
     }
 
-    public Course getCourse() {
-        return course;
-    }
 
-    public void setCourse(Course course) {
-        this.course = course;
-    }
 }
