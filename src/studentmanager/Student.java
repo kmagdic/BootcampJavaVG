@@ -1,4 +1,4 @@
-package karlo.studentdb;
+package studentmanager;
 
 
 
@@ -7,13 +7,18 @@ public class Student {
     private String lastName;
     private int year;
     private int id;
-
+    private Course course;
 
 
 
     Student() {
     }
 
+
+    Student(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
     Student(String firstName, String lastName, int year) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,6 +33,7 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", year=" + year +
                 ", id=" + id +
+                ", course=" + course +
                 '}';
     }
 
@@ -61,5 +67,13 @@ public class Student {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }

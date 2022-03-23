@@ -17,15 +17,17 @@ public class StudentDaoSqlite {
 
     }
 
-    public void saveStudent(Student s1) {
+    public void saveStudent(Student student) {
         String sql = "INSERT INTO student (first_name, last_name, year) VALUES(?, ?, ?)";
 
         try  {
             PreparedStatement s = conn.prepareStatement(sql);
-            s.setString(1, s1.getFirstName());
-            s.setString(2, s1.getLastName());
+            s.setString(1, student.getFirstName());
+            s.setString(2, student.getLastName());
+            s.setInt(3, student.getYear());
 
             s.execute();
+            student.setId(s.getGeneratedKeys().getInt(1));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -43,10 +45,12 @@ public class StudentDaoSqlite {
             ResultSet result = statement.executeQuery(sql);
 
             while (result.next()) {
-                Student s = new Student();
-                s.setFirstName(result.getString("first_name"));
-                s.setLastName(result.getString("last_name"));
-                students.add(s);
+                Student student = new Student();
+                student.setFirstName(result.getString("first_name"));
+                student.setLastName(result.getString("last_name"));
+                student.setYear(result.getInt("year"));
+                student.setId(result.getInt("id"));
+                students.add(student);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -54,5 +58,16 @@ public class StudentDaoSqlite {
 
         return students;
 
+    }
+
+    public void deleteStudent(Student student) {
+
+        try  {
+            String sql= "DELETE FROM student where id = " + student.getId();
+            Statement s = conn.createStatement();
+            s.execute(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

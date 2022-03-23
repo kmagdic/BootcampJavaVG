@@ -4,7 +4,7 @@ import java.util.List;
 
 public class StudentManager {
 
-    public static void main_old(String[] args) {
+    public static void main(String[] args) {
         Course javaCourse = new Course();
         javaCourse.setName("Java basic programming");
         Course ccCourse = new Course();
@@ -38,16 +38,4 @@ public class StudentManager {
 
     }
 
-    public static void main(String[] args) {
-        Student s1 = new Student("Pero","Perić");
-        Student s2 = new Student("Matija","Marić");
-        Student s3 = new Student("Đuro","Đurić");
-        System.out.println(s1);
-        System.out.println(s2);
-        System.out.println(s3);
-
-
-
-
-    }
 }
