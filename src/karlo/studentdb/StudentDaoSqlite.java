@@ -2,7 +2,9 @@ package karlo.studentdb;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class StudentDaoSqlite {
 
@@ -68,8 +70,8 @@ public class StudentDaoSqlite {
     }
 
 
-    public List<Student> listAll() {
-        List<Student> students = new ArrayList<>();
+    public Map<Integer, Student> listAll() {
+        Map<Integer, Student> students = new HashMap<>();
         String sql = "SELECT * FROM student";
 
         try {
@@ -83,7 +85,8 @@ public class StudentDaoSqlite {
                 student.setLastName(result.getString("last_name"));
                 student.setYear(result.getInt("year"));
                 student.setId(result.getInt("id"));
-                students.add(student);
+
+                students.put(student.getId(), student);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
