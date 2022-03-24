@@ -9,15 +9,13 @@ public class Student {
     private int id;
 
 
-
-    Student() {
+    public Student() {
     }
 
-    Student(String firstName, String lastName, int year, int id) {
+    Student(String firstName, String lastName, int year) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.year = year;
-        this.id = id;
     }
 
 
