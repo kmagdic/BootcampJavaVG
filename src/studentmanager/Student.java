@@ -1,4 +1,4 @@
-package studentmanager;
+/*package studentmanager;
 
 
 
@@ -77,3 +77,4 @@ public class Student {
         this.course = course;
     }
 }
+*/

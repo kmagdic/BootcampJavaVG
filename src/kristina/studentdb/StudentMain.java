@@ -1,6 +1,7 @@
 package kristina.studentdb;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class StudentMain {
@@ -15,17 +16,17 @@ public class StudentMain {
         System.out.println(s2);
 
 
-        StudentDaoSqlite dao = new StudentDaoSqlite("doc/students-kristina.db");
-        //dao.saveStudent(s1);
-        //dao.saveStudent(s2);
+        StudentDaoSqlite dao = new StudentDaoSqlite("doc/students-kristina2.db");
+        dao.saveStudent(s1);
+        dao.saveStudent(s2);
 
         //System.out.println("Unesite ID studenta kojeg želite obrisati: ");
         //int studentId = scanner.nextInt();
 
         //dao.delete(studentId);
 
-        List<Student> students = dao.listAll();
-        for(Student s : students)
+        Map<Integer, Student> students = dao.listAll();
+        for(Student s : students.values())
             System.out.println(s);
 
     }

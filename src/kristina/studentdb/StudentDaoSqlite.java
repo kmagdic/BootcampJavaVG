@@ -2,15 +2,26 @@ package kristina.studentdb;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class StudentDaoSqlite {
 
     private Connection conn;
 
     StudentDaoSqlite(String fileName) {
+        String createTableSql = "CREATE TABLE IF NOT EXISTS student (\n"
+                + "	id integer PRIMARY KEY,\n"
+                + "	first_name text NOT NULL,\n"
+                + "	last_name text NOT NULL,\n"
+                + "	year integer\n"
+                + ");";
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:" + fileName);
+
+            Statement s = conn.createStatement();
+            s.execute(createTableSql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -50,8 +61,8 @@ public class StudentDaoSqlite {
     }
 
 
-    public List<Student> listAll() {
-        List<Student> students = new ArrayList<>();
+    public Map<Integer, Student> listAll() {
+        Map<Integer, Student> student = new HashMap<>();
         String sql = "SELECT * FROM student";
 
         try {
@@ -65,13 +76,14 @@ public class StudentDaoSqlite {
                 s.setLastName(result.getString("last_name"));
                 s.setYear(result.getInt("year"));
                 s.setId(result.getInt("id"));
-                students.add(s);
+
+                student.put(s.getId(), s);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
-        return students;
+        return student;
 
     }
 }
