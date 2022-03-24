@@ -9,8 +9,20 @@ public class StudentDaoSqlite {
     private Connection conn;
 
     StudentDaoSqlite(String fileName) {
+
+        String createTableSql = "CREATE TABLE IF NOT EXISTS students (\n"
+                + "	id integer PRIMARY KEY,\n"
+                + "	first_name text NOT NULL,\n"
+                + "	last_name text NOT NULL,\n"
+                + "	year integer\n"
+                + ");";
+
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:" + fileName);
+
+            Statement s = conn.createStatement();
+            s.execute(createTableSql);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
