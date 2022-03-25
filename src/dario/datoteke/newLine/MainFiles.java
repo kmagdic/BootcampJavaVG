@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MainFiles {
     public static void main(String[] args) {
-        File file = new File("doc/dataset_91033.txt");
+        File file = new File("doc/darioDatasets/dataset_91033.txt");
         long sum = 0L;
 
         try (Scanner scanner = new Scanner(file)) {
@@ -14,7 +14,7 @@ public class MainFiles {
                 sum += tmpNum;
             }
         } catch (FileNotFoundException e) {
-            System.out.println("No file found: doc/dataset_91033.txt");
+            System.out.println("No file found: doc/darioDatasets/dataset_91033.txt");
         }
 
         System.out.println(sum);
